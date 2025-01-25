@@ -13,7 +13,7 @@ This project demonstrates how to set up a simple JSP-based web application using
 
 1. **Clone the Repository** (if applicable):
     ```bash
-    git clone https://your-repository-url.git
+    git clone https://github.com/srimanja/JSPServletSpringBootDemo.git
     cd JSPServletSpringBootDemo
     ```
 
