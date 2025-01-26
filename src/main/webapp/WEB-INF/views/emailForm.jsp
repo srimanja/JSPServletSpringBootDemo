@@ -35,30 +35,30 @@
 </head>
 <body>
     <h1>Account Creation Form</h1>
+
+    <!-- Display server-side validation error messages -->
+    <c:if test="${not empty error}">
+        <div style="color: red;">${error}</div>
+    </c:if>
+
     <form action="/submitAccount" method="post" onsubmit="return validateForm();">
         <label for="firstName">First Name:</label>
-        <input type="text" id="firstName" name="firstName" required>
-        <br><br>
+        <input type="text" id="firstName" name="firstName" required><br><br>
 
         <label for="lastName">Last Name:</label>
-        <input type="text" id="lastName" name="lastName" required>
-        <br><br>
+        <input type="text" id="lastName" name="lastName" required><br><br>
 
         <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email" required>
-        <br><br>
+        <input type="email" id="email" name="email" required><br><br>
 
         <label for="phone">Phone Number:</label>
-        <input type="text" id="phone" name="phone" required>
-        <br><br>
+        <input type="text" id="phone" name="phone" required><br><br>
 
         <label for="address">Address:</label>
-        <textarea id="address" name="address" rows="4" cols="30" required></textarea>
-        <br><br>
+        <textarea id="address" name="address" rows="4" cols="30" required></textarea><br><br>
 
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-        <br><br>
+        <input type="text" id="username" name="username" required><br><br>
 
         <button type="submit">Create Account</button>
     </form>
