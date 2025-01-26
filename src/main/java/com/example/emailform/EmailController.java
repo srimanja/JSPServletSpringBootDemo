@@ -9,18 +9,28 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class EmailController {
 
+    // Mapping for displaying the form
     @GetMapping("/")
-    public String showEmailForm() {
-        return "emailForm"; // This should match the name of the JSP file
+    public String showAccountForm() {
+        return "emailForm";  // This should render emailForm.jsp
     }
 
-    @PostMapping("/submitEmail")
-    public String submitEmail(
+    // Mapping for handling form submission
+    @PostMapping("/submitAccount")
+    public String submitAccount(
+            @RequestParam("firstName") String firstName,
+            @RequestParam("lastName") String lastName,
             @RequestParam("email") String email,
-            @RequestParam("message") String message,
+            @RequestParam("phone") String phone,
+            @RequestParam("address") String address,
+            @RequestParam("username") String username,
             Model model) {
+        model.addAttribute("firstName", firstName);
+        model.addAttribute("lastName", lastName);
         model.addAttribute("email", email);
-        model.addAttribute("message", message);
-        return "success"; // This should match the name of the JSP file
+        model.addAttribute("phone", phone);
+        model.addAttribute("address", address);
+        model.addAttribute("username", username);
+        return "success";  // This should render success.jsp
     }
 }
